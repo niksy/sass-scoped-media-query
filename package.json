@@ -1,6 +1,6 @@
 {
   "name": "sass-scoped-media-query",
-  "version": "0.0.0",
+  "version": "1.0.0",
   "description": "Scope CSS styles and apply them only inside provided selector and media query pairs.",
   "main": "_index.scss",
   "author": "Ivan Nikolić <niksy5@gmail.com> (http://ivannikolic.com)",
