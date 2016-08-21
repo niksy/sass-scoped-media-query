@@ -1,0 +1,44 @@
+{
+  "name": "sass-scoped-media-query",
+  "version": "0.0.0",
+  "description": "Scope CSS styles and apply them only inside provided selector and media query pairs.",
+  "main": "_index.scss",
+  "author": "Ivan Nikolić <niksy5@gmail.com> (http://ivannikolic.com)",
+  "license": "MIT",
+  "style": "_index.scss",
+  "directories": {
+    "test": "test"
+  },
+  "scripts": {
+    "test": "eslint {test/**/*}.js && stylelint {_index,test/**/*.scss} && mocha test/**/*.js"
+  },
+  "devDependencies": {
+    "eslint": "^3.1.1",
+    "eslint-config-niksy": "^3.0.1",
+    "mocha": "^2.5.3",
+    "sass-true": "^2.1.3",
+    "stylelint": "^7.0.3",
+    "stylelint-config-niksy": "^3.0.1"
+  },
+  "engines": {
+    "node": ">=4"
+  },
+  "keywords": [
+    "element",
+    "eqcss",
+    "media",
+    "mq",
+    "queries",
+    "query",
+    "sass",
+    "scoped"
+  ],
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/niksy/sass-scoped-media-query.git"
+  },
+  "bugs": {
+    "url": "https://github.com/niksy/sass-scoped-media-query/issues"
+  },
+  "homepage": "https://github.com/niksy/sass-scoped-media-query#readme"
+}

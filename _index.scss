@@ -1,0 +1,32 @@
+/**
+ * Scoped media query
+ *
+ * Scope CSS selectors to top-level selector
+ *
+ * @content Standard (S)CSS selectors
+ *
+ * @param  {arglist} $scoped-set... - Map list
+ * @prop   {string} $mq - String representation of media query
+ * @prop   {string} $selector - Top-level selector which will be appended to current selector (if exists)
+ *
+ * @output Mixin content wrapped in passed media queries with top-level selector appended (if exists)
+ */
+@mixin scoped-media-query ( $scoped-set... ) {
+	@each $mq, $parent-selector in $scoped-set {
+		@media #{$mq} {
+			@if $parent-selector {
+				@if & {
+					#{$parent-selector} & {
+						@content;
+					}
+				} @else {
+					#{$parent-selector} {
+						@content;
+					}
+				}
+			} @else {
+				@content;
+			}
+		}
+	}
+}
