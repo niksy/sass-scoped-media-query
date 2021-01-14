@@ -1,26 +1,23 @@
-@import 'true';
-@import '../index';
+@use 'true' as *;
+@use '../index' as *;
 
 @include test-module('Single query, outside selector') {
-
-	@include test('"screen and (min-width: 500px)", with outside selector ".jasper"') {
-
-		@include assert {
-
-			@include output {
-
+	@include test(
+		'"screen and (min-width: 500px)", with outside selector ".jasper"'
+	) {
+		@include assert() {
+			@include output() {
 				.jasper {
-
-					@include scoped-media-query(('screen and (min-width: 500px)')) {
+					@include scoped-media-query(
+						('screen and (min-width: 500px)')
+					) {
 						color: #f00;
 					}
 				}
 			}
 
-			@include expect {
-
+			@include expect() {
 				@media screen and (min-width: 500px) {
-
 					.jasper {
 						color: #f00;
 					}
@@ -29,26 +26,23 @@
 		}
 	}
 
-	@include test('"screen and (min-width: 500px)", with outside selector ".jasper" and parent selector ".gizmo"') {
-
-		@include assert {
-
+	@include test(
+		'"screen and (min-width: 500px)", with outside selector ".jasper" and parent selector ".gizmo"'
+	) {
+		@include assert() {
 			@include output($selector: false) {
-
 				.jasper {
-
-					@include scoped-media-query(('screen and (min-width: 500px)', '.gizmo')) {
+					@include scoped-media-query(
+						('screen and (min-width: 500px)', '.gizmo')
+					) {
 						color: #f00;
 					}
 				}
 			}
 
 			@include expect($selector: false) {
-
 				@media screen and (min-width: 500px) {
-
 					.gizmo {
-
 						.jasper {
 							color: #f00;
 						}
@@ -58,16 +52,15 @@
 		}
 	}
 
-	@include test('"screen and (min-width: 500px)", with outside selector ".jasper", parent selector ".gizmo" and complex nesting') {
-
-		@include assert {
-
+	@include test(
+		'"screen and (min-width: 500px)", with outside selector ".jasper", parent selector ".gizmo" and complex nesting'
+	) {
+		@include assert() {
 			@include output($selector: false) {
-
 				.jasper {
-
-					@include scoped-media-query(('screen and (min-width: 500px)', '.gizmo')) {
-
+					@include scoped-media-query(
+						('screen and (min-width: 500px)', '.gizmo')
+					) {
 						.gizmo {
 							color: #f00;
 						}
@@ -80,13 +73,9 @@
 			}
 
 			@include expect($selector: false) {
-
 				@media screen and (min-width: 500px) {
-
 					.gizmo {
-
 						.jasper {
-
 							.gizmo {
 								color: #f00;
 							}
@@ -100,5 +89,4 @@
 			}
 		}
 	}
-
 }

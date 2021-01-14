@@ -1,13 +1,15 @@
-var sassTrue = require('sass-true');
+import sassTrue from 'sass-true';
 
 [
 	'./test/single-query.scss',
 	'./test/single-query-outside-selector.scss',
 	'./test/multiple-queries.scss',
 	'./test/multiple-queries-outside-selector.scss'
-]
-	.forEach(function ( fp ) {
-		sassTrue.runSass({
+].forEach((fp) => {
+	sassTrue.runSass(
+		{
 			file: fp
-		}, describe, it);
-	});
+		},
+		{ describe, it }
+	);
+});

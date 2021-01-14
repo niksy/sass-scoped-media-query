@@ -1,6 +1,8 @@
 {
 	"root": true,
-	"extends": [
-		"niksy/browser"
-	]
+	"extends": ["niksy", "niksy/next", "niksy/browser", "prettier"],
+	"plugins": ["prettier"],
+	"rules": {
+		"prettier/prettier": 1
+	}
 }

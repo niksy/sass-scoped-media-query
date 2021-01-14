@@ -11,7 +11,7 @@
  *
  * @output Mixin content wrapped in passed media queries with top-level selector appended (if exists)
  */
-@mixin scoped-media-query ( $scoped-set... ) {
+@mixin scoped-media-query ($scoped-set...) {
 	@each $mq, $parent-selector in $scoped-set {
 		@media #{$mq} {
 			@if $parent-selector {

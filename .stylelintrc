@@ -1,5 +1,11 @@
 {
 	"extends": [
-		"stylelint-config-niksy/scss"
-	]
+		"stylelint-config-niksy",
+		"stylelint-config-niksy/scss",
+		"stylelint-config-prettier"
+	],
+	"plugins": ["stylelint-prettier"],
+	"rules": {
+		"prettier/prettier": [true, { "severity": "warning" }]
+	}
 }

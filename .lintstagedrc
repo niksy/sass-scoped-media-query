@@ -1,0 +1,8 @@
+{
+	"*.js": ["eslint --fix"],
+	"*.{css,scss}": ["stylelint --fix"],
+	"*.md": ["prettier --ignore-path .gitignore --write"],
+	".!(npm|browserslist)*rc": [
+		"prettier --ignore-path .gitignore --parser json --write"
+	]
+}

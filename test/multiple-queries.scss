@@ -1,14 +1,12 @@
-@import 'true';
-@import '../index';
+@use 'true' as *;
+@use '../index' as *;
 
 @include test-module('Multiple queries') {
-
-	@include test('"screen and (min-width: 500px), screen and (min-width: 1000px)", without selector') {
-
-		@include assert {
-
-			@include output {
-
+	@include test(
+		'"screen and (min-width: 500px), screen and (min-width: 1000px)", without selector'
+	) {
+		@include assert() {
+			@include output() {
 				@include scoped-media-query(
 					('screen and (min-width: 500px)'),
 					('screen and (min-width: 1000px)')
@@ -17,8 +15,7 @@
 				}
 			}
 
-			@include expect {
-
+			@include expect() {
 				@media screen and (min-width: 500px) {
 					color: #f00;
 				}
@@ -30,34 +27,29 @@
 		}
 	}
 
-	@include test('"screen and (min-width: 500px), screen and (min-width: 1000px)", with selector ".jasper"') {
-
-		@include assert {
-
-			@include output {
-
+	@include test(
+		'"screen and (min-width: 500px), screen and (min-width: 1000px)", with selector ".jasper"'
+	) {
+		@include assert() {
+			@include output() {
 				@include scoped-media-query(
 					('screen and (min-width: 500px)'),
 					('screen and (min-width: 1000px)')
 				) {
-
 					.jasper {
 						color: #f00;
 					}
 				}
 			}
 
-			@include expect {
-
+			@include expect() {
 				@media screen and (min-width: 500px) {
-
 					.jasper {
 						color: #f00;
 					}
 				}
 
 				@media screen and (min-width: 1000px) {
-
 					.jasper {
 						color: #f00;
 					}
@@ -66,17 +58,15 @@
 		}
 	}
 
-	@include test('"screen and (min-width: 500px), screen and (min-width: 1000px)", with selector ".jasper" and parent selector ".gizmo"') {
-
-		@include assert {
-
+	@include test(
+		'"screen and (min-width: 500px), screen and (min-width: 1000px)", with selector ".jasper" and parent selector ".gizmo"'
+	) {
+		@include assert() {
 			@include output($selector: false) {
-
 				@include scoped-media-query(
 					('screen and (min-width: 500px)', '.gizmo'),
 					('screen and (min-width: 1000px)', '.gizmo')
 				) {
-
 					.jasper {
 						color: #f00;
 					}
@@ -84,11 +74,8 @@
 			}
 
 			@include expect($selector: false) {
-
 				@media screen and (min-width: 500px) {
-
 					.gizmo {
-
 						.jasper {
 							color: #f00;
 						}
@@ -96,9 +83,7 @@
 				}
 
 				@media screen and (min-width: 1000px) {
-
 					.gizmo {
-
 						.jasper {
 							color: #f00;
 						}
@@ -108,19 +93,16 @@
 		}
 	}
 
-	@include test('"screen and (min-width: 500px), screen and (min-width: 1000px)", with selector ".jasper", parent selector ".gizmo" and complex nesting') {
-
-		@include assert {
-
+	@include test(
+		'"screen and (min-width: 500px), screen and (min-width: 1000px)", with selector ".jasper", parent selector ".gizmo" and complex nesting'
+	) {
+		@include assert() {
 			@include output($selector: false) {
-
 				@include scoped-media-query(
 					('screen and (min-width: 500px)', '.gizmo'),
 					('screen and (min-width: 1000px)', '.gizmo')
 				) {
-
 					.jasper {
-
 						.gizmo {
 							color: #f00;
 						}
@@ -133,13 +115,9 @@
 			}
 
 			@include expect($selector: false) {
-
 				@media screen and (min-width: 500px) {
-
 					.gizmo {
-
 						.jasper {
-
 							.gizmo {
 								color: #f00;
 							}
@@ -152,11 +130,8 @@
 				}
 
 				@media screen and (min-width: 1000px) {
-
 					.gizmo {
-
 						.jasper {
-
 							.gizmo {
 								color: #f00;
 							}
@@ -170,5 +145,4 @@
 			}
 		}
 	}
-
 }
