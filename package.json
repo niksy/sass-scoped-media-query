@@ -11,6 +11,11 @@
       "style": "_index.scss",
       "default": "_index.scss"
     },
+    "./index": {
+      "sass": "_index.scss",
+      "style": "_index.scss",
+      "default": "_index.scss"
+    },
     "./package.json": "./package.json"
   },
   "main": "_index.scss",
