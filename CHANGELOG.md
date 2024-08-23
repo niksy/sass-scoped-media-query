@@ -2,6 +2,8 @@
 
 ## [Unreleased][]
 
+## [2.0.2][] - 2024-08-23
+
 -   Update package exports
 -   Pin Sass dependencies versions
 
@@ -21,3 +23,6 @@
 [unreleased]:
 	https://github.com/niksy/sass-scoped-media-query/compare/v2.0.1...HEAD
 [2.0.1]: https://github.com/niksy/sass-scoped-media-query/tree/v2.0.1
+[Unreleased]:
+	https://github.com/niksy/sass-scoped-media-query/compare/v2.0.2...HEAD
+[2.0.2]: https://github.com/niksy/sass-scoped-media-query/tree/v2.0.2
