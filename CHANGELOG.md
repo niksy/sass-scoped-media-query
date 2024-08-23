@@ -2,6 +2,9 @@
 
 ## [Unreleased][]
 
+-   Update package exports
+-   Pin Sass dependencies versions
+
 ## [2.0.1][] - 2021-01-14
 
 ### Fixed
